@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		%sveltekit.head%
+	</head>
+	<style>
+		* {
+			font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+		body{
+			background-color: hsl(220, 15%, 20%);
+			color: hsl(210, 20%, 98%);
+		}
+		:root{
+			--primary-color:#17cfaa;
+			--primary-text:#080a0c;
+			--secondary-color:hsl(220, 15%, 12%);
+			--secondary-text:hsl(210, 20%, 98%);
+			--secondary-text-light:hsl(210, 20%, 70%);
+		}
+
+	</style>
+	<body data-sveltekit-preload-data="hover">
+		<div style="display: contents">%sveltekit.body%</div>
+	</body>
+</html>
