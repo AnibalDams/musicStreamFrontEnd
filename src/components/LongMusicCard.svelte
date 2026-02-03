@@ -1,17 +1,12 @@
 <script>
 	import { player } from "$lib/musics.svelte";
+	let {onclick=()=>{}, cover="", name=""}=$props()
 
 </script>
-<div class="container" on:click={()=>{
-    let tracks = [		{ id: '1', title: 'Song One', artist: 'Artist A', url: 'http://localhost:8000/static/Anone [j2Z4ROQKMEY].opus' },
-		{ id: '2', title: 'Song Two', artist: 'Artist B', url: 'http://localhost:8000/static/1769621462764.opus' }, { id: '3', title: 'Song three', artist: 'Artist c', url: 'http://localhost:8000/static/Be a flower [voAu0YRWUNE].opus' }]
-    player.setPlaylist(tracks);
-    player.play();
-
-}}>
+<div class="container" onclick={()=>onclick()}>
 	<div style="display: flex; align-items: center; gap: 8px;">
-		<img src="https://i.scdn.co/image/ab67616d0000b273c73bfb9465d91e4010a15662" alt="" />
-		<span style="font-weight: bold;">Yuruuta</span>
+		<img src={cover} alt="" />
+		<span style="font-weight: bold;">{name}</span>
 	</div>
 
 	<span class="play"

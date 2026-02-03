@@ -5,7 +5,7 @@
     let color = active?"var(--primary-text)":"var(--secondary-text-light)";
 </script>
 
-<a href="#"style={`--background:${background};--color:${color}`}>{@html icon} {text}</a>
+<a href="/favorites"style={`--background:${background};--color:${color}`}>{@html icon} {text}</a>
 
 
 <style>

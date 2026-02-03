@@ -4,12 +4,9 @@
 	import RangeSlider from './RangeSlider.svelte';
 	import { player } from '$lib/musics.svelte';
 
-	let audio;
 	let paused = $state(true);
-	let time = $state(player.currentTime ?? 0);
 	let duration = $derived(player.duration);
 	let durationFormatted = $derived(formatDuration(duration));
-	let volume = $state(1);
 
 	let currentT = $derived(formatDuration(player.currentTime));
 
@@ -23,7 +20,7 @@
 <div class="player-container">
 	<div class="left">
 		<img
-			src="https://i.scdn.co/image/ab67616d0000b273c73bfb9465d91e4010a15662"
+			src={player.currentTrack?.cover}
 			alt=""
 			style={paused ? '' : ``}
 		/>
@@ -257,6 +254,7 @@
 		border-radius: 50%;
 		padding: 8px;
 		background-color: var(--secondary-text);
+		cursor: pointer;
 	}
 
 	.player-container .center .track {
