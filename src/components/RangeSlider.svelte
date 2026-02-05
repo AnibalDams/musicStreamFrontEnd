@@ -16,7 +16,7 @@
     {step}
     bind:value={value}
     oninput={oninput}
-    style="--progress: {progress}%;"
+    style="--progress: {progress+0.8}%;"
     aria-label="Progress Slider"
   />
 </div>

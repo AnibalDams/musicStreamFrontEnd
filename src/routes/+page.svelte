@@ -3,6 +3,7 @@
     import LeftPanel from "../components/leftPanel.svelte";
 	import LongMusicCard from "../components/LongMusicCard.svelte";
 	import { player } from "$lib/musics.svelte.js";
+	import PlaylistCard from "../components/PlaylistCard.svelte";
     let {data} = $props();
     let musicPlaylist:any=$state([])
 
@@ -42,6 +43,10 @@
         
     </div>
     <h1>Made for you</h1>
+    <div class="latest_music_container">
+    {#each data.playlist as playlist }
+        <PlaylistCard playlist={playlist}/>
+    {/each}</div>
 </div>
 
 

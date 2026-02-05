@@ -22,7 +22,7 @@
 		<img
 			src={player.currentTrack?.cover}
 			alt=""
-			style={paused ? '' : ``}
+			 class:playing={player.isPlaying}
 		/>
 		<div class="text">
 			<span class="name">{player.currentTrack?.title}</span>
@@ -208,14 +208,19 @@
 		align-items: center;
 		gap: 8px;
 	}
-	.player-container .left img {
-		width: 60px;
-		height: 60px;
-		object-fit: cover;
-		animation: opacity 1s ease-in-out infinite alternate both;
-		border-radius: 8px;
-		transition: 2s;
-	}
+/* Estilo base de la imagen (SIN animación) */
+.player-container .left img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: 2s; /* Esto ayuda a que el cambio de opacidad sea suave al pausar */
+}
+
+/* Nueva clase que se activa solo al reproducir */
+.player-container .left img.playing {
+    animation: opacity 1s ease-in-out infinite alternate both;
+}
 	.player-container .left .text {
 		display: flex;
 		flex-direction: column;
